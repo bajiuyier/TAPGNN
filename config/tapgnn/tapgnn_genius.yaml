@@ -1,0 +1,63 @@
+# Hyperparameters from capacity-32f42eb406.
+# n_epochs includes warmup_epochs.
+# best para
+algorithm: TAPGNN
+task: node
+
+dataset:
+  # Use the externally supplied official folds.  The runner also accepts the
+  # alias "official_split", but "office_split" is kept for this project.
+  split_type: office_split
+  office_split:
+    # Use the same released-partition directory and manifest as the tuning code.
+    # The actual file is data_splits/cornell.npz.
+    split_dir: data_splits
+    # These are 10 released fixed random partitions, not disjoint CV folds.
+    split_ids: all
+    source: "Geom-GCN released random partitions"
+    citation: "Pei et al., Geom-GCN: Geometric Graph Convolutional Networks, ICLR 2020"
+    reference_url: "https://github.com/graphdml-uiuc-jlu/geom-gcn/tree/master/splits"
+
+  # The fields below remain available if split_type is changed back to percent.
+  train_size: null
+  val_size: null
+  test_size: null
+  train_percent: null
+  val_percent: null
+  test_percent: null
+  train_examples_per_class: null
+  val_examples_per_class: null
+  test_examples_per_class: null
+  feat_norm: false
+  adj_norm: false
+  add_self_loop: false
+  from_npz_largest_component: false
+  sparse: true
+
+model:
+  method: tapgnn
+  n_feat: null
+  n_class: null
+  n_hidden: 256
+  num_hops: 1
+  correction_hidden: 128
+  dropout: 0.7
+  norm_eps: 1.0e-08
+
+loss:
+  lambda_self: 0.9
+  lambda_harm: 0.5
+
+training:
+  seed: 56
+  optimizer: Adam
+  lr: 0.01
+  weight_decay: 0.0
+  n_epochs: 500
+  warmup_epochs: 50
+  patience: 200
+  min_joint_epochs: 0
+  criterion: metric
+  select_metric: roc_auc
+  debug: true
+  print_every: 50
