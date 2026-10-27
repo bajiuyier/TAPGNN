@@ -1,0 +1,4559 @@
+{
+  "schema_version": 1,
+  "downloaded_at": "2026-10-02",
+  "dataset_count": 19,
+  "partition_count": 175,
+  "conversion": "Boolean masks preserve exactly the original train/valid/test node sets. No sampling was performed.",
+  "label_sources": [
+    {
+      "filename": "ind.cora.ally",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.ally",
+      "sha256": "2b998f5cc7fedc86e7f97ca2498f47a1ffc1462c29e2d578b23bf3f62b6e7d71"
+    },
+    {
+      "filename": "ind.cora.test.index",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.test.index",
+      "sha256": "297ce89af2b51a6a194181c7dbe1796c6a1cf9cd9349a88383b1b1e227867875"
+    },
+    {
+      "filename": "ind.cora.ty",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.cora.ty",
+      "sha256": "41f5ac76596a1699cc33f53084a2419e92961c42bb75f36fc38e616d348532ad"
+    },
+    {
+      "filename": "ind.citeseer.ally",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.citeseer.ally",
+      "sha256": "f704b2d986dde6c2669934de1f3ae5696a6cf9455c0f6b2646a2d135ea0a1c95"
+    },
+    {
+      "filename": "ind.citeseer.test.index",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.citeseer.test.index",
+      "sha256": "2af990671580b6b2df5d158d1038f8292e30c9cd821b5453f399659b25b723d4"
+    },
+    {
+      "filename": "ind.citeseer.ty",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.citeseer.ty",
+      "sha256": "55e5bd1ba1e733a04598753ad1a8d57957f4b8f89e74519f41f4f4938767e4ce"
+    },
+    {
+      "filename": "ind.pubmed.ally",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.pubmed.ally",
+      "sha256": "0c37bbe3b5014ec365e9d393cf4791925e5ed94fb194305d74f064a8d7b50f0e"
+    },
+    {
+      "filename": "ind.pubmed.test.index",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.pubmed.test.index",
+      "sha256": "b101d421688bbaecbd82e8a18f1e282378d6830f3a37666f28ebc47f844341b5"
+    },
+    {
+      "filename": "ind.pubmed.ty",
+      "url": "https://raw.githubusercontent.com/kimiyoung/planetoid/master/data/ind.pubmed.ty",
+      "sha256": "ee2e0d4819d9fbcc403689c3bf2e49face401b605932f093bc58ab6461130fdd"
+    },
+    {
+      "filename": "cornell.txt",
+      "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/new_data/cornell/out1_node_feature_label.txt",
+      "sha256": "38561ad44e29199a826ccef7f94f469b94a912076f83fbc453a69b8ac2b4b858"
+    },
+    {
+      "filename": "texas.txt",
+      "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/new_data/texas/out1_node_feature_label.txt",
+      "sha256": "cf5a3ca346cdd1210b8342e22517fcbbdae658065b7a3145f59350e50e6236a3"
+    },
+    {
+      "filename": "wisconsin.txt",
+      "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/new_data/wisconsin/out1_node_feature_label.txt",
+      "sha256": "a32b0aa38d42f0d36841e8a8cb646d197f0ff33a182ac75a2b4476aeed3c7e4b"
+    },
+    {
+      "filename": "film.txt",
+      "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/new_data/film/out1_node_feature_label.txt",
+      "sha256": "1d5cdd094f8b91e770f6decfca85b35cf42f75d1efb51055fd6af16e11820ff8"
+    },
+    {
+      "filename": "chameleon_out1_node_feature_label.txt",
+      "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/new_data/chameleon/out1_node_feature_label.txt",
+      "sha256": "5fd29736ff31b43a1bfcf305bc8b4cffc3103fb0957667976b2ea0f78aedcf5b"
+    },
+    {
+      "filename": "squirrel_out1_node_feature_label.txt",
+      "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/new_data/squirrel/out1_node_feature_label.txt",
+      "sha256": "ac15ab755983717a187992eef8ce2017aae33ea444fd655b07e4662690dcc03a"
+    }
+  ],
+  "datasets": {
+    "cora": {
+      "num_nodes": 2708,
+      "num_splits": 10,
+      "file": "cora.npz",
+      "file_sha256": "b318148555ce8c8a6ccac527a827cf827635ea9a0591b0444e116c0f4ccaefc5",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "cora",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_0.npz",
+          "bytes": 1989,
+          "sha256": "619931e6c3f0248bf9c7b6be24680a0a617bcfaba661cb0d7afaee8e18a74a51"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_1.npz",
+          "bytes": 1958,
+          "sha256": "d24be667034cb15a55bbf512dbae07b39c758eed66a9ba27106fa795422fe11c"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_2.npz",
+          "bytes": 1967,
+          "sha256": "811fb695c4c9ab0a53ab3a665bf4232652a08a6e38faac5b43a7da43a8454b74"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_3.npz",
+          "bytes": 1956,
+          "sha256": "9d9c19d88a689b76a4b97e8694ef8d20cb0f1b192bbd05a0d5649c91f0cb6ef4"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_4.npz",
+          "bytes": 1942,
+          "sha256": "3040b6bc0ddfff3757d55f514becf0b1b6b2e382114bfb0bc900dbcbb58fca17"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_5.npz",
+          "bytes": 2008,
+          "sha256": "52373862971060e366829930332acabaa90cc6f41019c52bf6c92e4c22f8f093"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_6.npz",
+          "bytes": 1944,
+          "sha256": "07847ea94e8b19970cf86731f19869aac0c56310d27f687d0feb9553d7525dd6"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_7.npz",
+          "bytes": 1962,
+          "sha256": "262573079c8b1f4bc043d32edd3d23a6c36f1d7258efe60c11a6197ba0eee560"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_8.npz",
+          "bytes": 1956,
+          "sha256": "d6c6a2163aeadd103ae386e800e473d2388da866f3f464199180d9b0e2f7d6cc"
+        },
+        {
+          "dataset": "cora",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cora_split_0.6_0.2_9.npz",
+          "bytes": 1948,
+          "sha256": "9d236d0cf723871d88dea567afe92d50c11d0ffba280349a5cc7f5f2ea42202f"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "eb2e7b449ec326799c6fd6900bcb05e2c46002e13f0f82f7a2d672bff408d399"
+        },
+        {
+          "split_id": 1,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "f3578e8ba80f65e1ae8848f489949d6602ec3b98334946609418a0345b14b452"
+        },
+        {
+          "split_id": 2,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "8ba59b91b6d82595cec5c0480931b744b1d73d6f0354de283bfa872f99cd4be4"
+        },
+        {
+          "split_id": 3,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "af22c58f419fa20c144d584bea65948e47c1697a86dcfe78423b7b1bfdf31fe6"
+        },
+        {
+          "split_id": 4,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "db48bc136524887791300439f8433a95ecfe039a695bf09a9f80cd05fce6f94b"
+        },
+        {
+          "split_id": 5,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "78d884b2137a0f2d694fda9b67833b63db1a3bcdb8c087d42de84d2afe31b607"
+        },
+        {
+          "split_id": 6,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "86f0fa0c01f7cdba724eb2450a8d8d744bb54eb610654d59eae6bf255b91e3f2"
+        },
+        {
+          "split_id": 7,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "79e44129daa4e790a49ff63e808ba4cb3344f0411a4cc50946121aafca4db188"
+        },
+        {
+          "split_id": 8,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "e2d304a3dd86480cbe0e4818345c6de7d9c1788c346c52495f86666e7f972d9f"
+        },
+        {
+          "split_id": 9,
+          "train": 1192,
+          "valid": 796,
+          "test": 497,
+          "assigned": 2485,
+          "unassigned": 223,
+          "ratios_of_assigned": [
+            0.4796780684104628,
+            0.3203219315895372,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.4401772525849335,
+            0.29394387001477107,
+            0.18353028064992616
+          ],
+          "fingerprint": "231ae646224042929548b58436cbfe7324b3e66b68f9a711aeafe9307039915d"
+        }
+      ],
+      "labels_sha256": "d0018d7ffd314eb25a4904973f2c7eb1b7be135d668de42d453714724f8e9d03",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "citeseer": {
+      "num_nodes": 3327,
+      "num_splits": 10,
+      "file": "citeseer.npz",
+      "file_sha256": "45b42d0a6e28dd402da98aed54b7fef36ecae273dcf82ebf80c2e9c1066551f1",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "citeseer",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_0.npz",
+          "bytes": 2266,
+          "sha256": "31d483e4c9cbdd031c35e284fbda3935bfda6901b8618e4ef0381af5b9143582"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_1.npz",
+          "bytes": 2284,
+          "sha256": "1e02e3220676a90715b5a868b207dc19f49e5bc13ef1e8a8c8305fb46e028659"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_2.npz",
+          "bytes": 2261,
+          "sha256": "910ce9d1a9c12f2ce84486fa7d1953d560c2cf57f9e0c213a4ae362ca56bff77"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_3.npz",
+          "bytes": 2278,
+          "sha256": "e8c84d2e0099b3c0d692a68126c03370579f0cd83c0dab42b25a0fb3b94cb2c6"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_4.npz",
+          "bytes": 2122,
+          "sha256": "a45c9e6b4abe527499a1a1bf545063cdc910c82ef4676f1ef4e483bb77712c8e"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_5.npz",
+          "bytes": 2123,
+          "sha256": "fc0f6091daab2b0f37a3522dbc60052d9bce4209e7c06482f6beb61a4ed442b9"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_6.npz",
+          "bytes": 2260,
+          "sha256": "c99f610ff84bf5f5c3fe71b548c3cdf9c9bf02185d0152432b290877df1c4a3b"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_7.npz",
+          "bytes": 2269,
+          "sha256": "26bb7e5ea3aed014df5765af845fae70db9cdbb8875c46fc89cc4d6d042fb182"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_8.npz",
+          "bytes": 2261,
+          "sha256": "f8efadce7a3732ac39ec6625f591c9ed0b4222d95257f25f2a05ad5518e4a7eb"
+        },
+        {
+          "dataset": "citeseer",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/citeseer_split_0.6_0.2_9.npz",
+          "bytes": 2278,
+          "sha256": "d9e586dad1886b3e1fdf3999140a192bb0cacea67c7849262ec862b8e7286cdf"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "13e66a7d40d9ba4be1dd8e1178fdfba3b092a235184bc3adf284a23bdf4b0cc1"
+        },
+        {
+          "split_id": 1,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "fcb93c1b2ad809be58122d22d63700f471753910c6372804bf9272a062ae24f0"
+        },
+        {
+          "split_id": 2,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "3874601f39230a017ee20b61dfca6527a37173789aff99a592a679273010deaf"
+        },
+        {
+          "split_id": 3,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "51deffa46ad8e5833cf4a852744f295bd7cf5dbbe296157a91714f902d94d9a5"
+        },
+        {
+          "split_id": 4,
+          "train": 1017,
+          "valid": 679,
+          "test": 424,
+          "assigned": 2120,
+          "unassigned": 1207,
+          "ratios_of_assigned": [
+            0.47971698113207545,
+            0.32028301886792454,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.3056807935076646,
+            0.20408776675683798,
+            0.12744214006612564
+          ],
+          "fingerprint": "aa01cb1a27a018d7d3fc81071b05708096823c1a6cd53a35c5a6805fcd2fd178"
+        },
+        {
+          "split_id": 5,
+          "train": 1017,
+          "valid": 679,
+          "test": 424,
+          "assigned": 2120,
+          "unassigned": 1207,
+          "ratios_of_assigned": [
+            0.47971698113207545,
+            0.32028301886792454,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.3056807935076646,
+            0.20408776675683798,
+            0.12744214006612564
+          ],
+          "fingerprint": "11572bc46f49926c53462c66073d74857039ec14a110b6a3712ef454a221b4ea"
+        },
+        {
+          "split_id": 6,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "34a2508e54e84cfdbf134a341747580d67fba5d03554e99430595e69a236f908"
+        },
+        {
+          "split_id": 7,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "f9f7e9f8f2cf39a23c5edd31ce3d60513f021fa3fb1f19a72eae106fe2a467ad"
+        },
+        {
+          "split_id": 8,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "a0c11b6d6dcedc106d08177dcbb8b7e098034611d4a27bb64450f69337eae61a"
+        },
+        {
+          "split_id": 9,
+          "train": 1596,
+          "valid": 1065,
+          "test": 666,
+          "assigned": 3327,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "ratios_of_graph": [
+            0.47971145175834085,
+            0.3201082055906222,
+            0.20018034265103696
+          ],
+          "fingerprint": "0fdb1075eb5d804b4a8d6c8cc05db7e9f7932be831fb7741fead87b8c2324355"
+        }
+      ],
+      "labels_sha256": "448f8c04e02516b2784cfd3c5d82049f84ea77d6ef94c65ee19f8ea8b792b0fa",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "pubmed": {
+      "num_nodes": 19717,
+      "num_splits": 10,
+      "file": "pubmed.npz",
+      "file_sha256": "d59ca9cd5473856dbe587a0f300e9c1a7bdd39fc6f3003e23da3655fbd39c881",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "pubmed",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_0.npz",
+          "bytes": 9669,
+          "sha256": "a15825b5bf77ffd2e9179e354f455bb9a6f8c4886cb28796688a38d45d75bdc9"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_1.npz",
+          "bytes": 9664,
+          "sha256": "51f2349156410d851859ff4858ecd401d05d024f1a3936250dd8e844a6fd527b"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_2.npz",
+          "bytes": 9706,
+          "sha256": "d94a2a3d607f23d7dc88dabb966db7c7da187e0a2af3c848d88ab0c5452c4a2b"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_3.npz",
+          "bytes": 9653,
+          "sha256": "62c389ddac567fcd25654db846fc693973c69cddf083f5495d33b592a768515e"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_4.npz",
+          "bytes": 9705,
+          "sha256": "3b2bbeb2f4bbee257bb4c626c15c3e3dd0e9da6ed23bf16f6ac520b95e18f84d"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_5.npz",
+          "bytes": 9640,
+          "sha256": "23aea01576f71aa165cd70564fb53b3f158d1ff71c1227e062797870fe130551"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_6.npz",
+          "bytes": 9701,
+          "sha256": "9122bd4e8e42cab8d33e952693d18d0f49c5f11327b922baefb81228ee903c44"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_7.npz",
+          "bytes": 9710,
+          "sha256": "958706e960939c716a5204671c08399864600ce82094755b2e61975137ccfae9"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_8.npz",
+          "bytes": 9705,
+          "sha256": "764dd33802022d7ab2595f08f21b424e83007aceeb5f85c9403c74bf791f56f6"
+        },
+        {
+          "dataset": "pubmed",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/pubmed_split_0.6_0.2_9.npz",
+          "bytes": 9704,
+          "sha256": "b9d4b4362fc02751c168f68f4120ab2fb516f4c84d447571653f1cd692946a66"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "2df599ff601be1403b443540831f4853c8de386b5f6c901563bb17d85acf4979"
+        },
+        {
+          "split_id": 1,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "80f2767536e73187d6be657e16b59982c1dcd115a95a7ba676da4c336acc8821"
+        },
+        {
+          "split_id": 2,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "832039a704c962d766038ab8ee1d56c3d9b2f92baf154dd19dfb0ac209952d64"
+        },
+        {
+          "split_id": 3,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "b07503a806fba1520ce9522a17dc0e1bb240de3c36d6616acc135ba82d6f0145"
+        },
+        {
+          "split_id": 4,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "f2dd6d55d82215fd5f50321cf11201daf6a9506b478e3289c04042d5925d81de"
+        },
+        {
+          "split_id": 5,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "53a92ad9e5e3f51475a9684c7932d1db9e34e6032160e70a2e427ea8057f2bef"
+        },
+        {
+          "split_id": 6,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "824e6696ee94debc2e15d200dbf01b1f1b55d77032ca441b193b7de6be3bddbf"
+        },
+        {
+          "split_id": 7,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "5fb0f715f00da832e58c4dac945516ded721293b53d5d6ef350c8983e05e45dc"
+        },
+        {
+          "split_id": 8,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "ca9c15f4ed1d0298dc010b327a416af5c2b456c0d49eda51f6b9f5b3e80e0527"
+        },
+        {
+          "split_id": 9,
+          "train": 9463,
+          "valid": 6310,
+          "test": 3944,
+          "assigned": 19717,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "ratios_of_graph": [
+            0.4799411675204139,
+            0.32002840188669673,
+            0.20003043059288939
+          ],
+          "fingerprint": "69ba54db1ee8960f783541a0d758f6ee58bbc010dba22685a2d11ad3b8cf83a5"
+        }
+      ],
+      "labels_sha256": "973a30d7c0567fe67fb9026058f1105859f87d44981b7b88992d648877d174c7",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "texas": {
+      "num_nodes": 183,
+      "num_splits": 10,
+      "file": "texas.npz",
+      "file_sha256": "67ea5e211790fca07bde1dc82876aac9c06b2d1624889d83e23ff8978a972ea0",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "texas",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_0.npz",
+          "bytes": 698,
+          "sha256": "7ba77bf7a8856fcc0ab15623a611b8cdce994e820f577da914123fb4f45272b0"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_1.npz",
+          "bytes": 701,
+          "sha256": "21cc244a96e3c51ad7993afb4dd227f90e467d82b964bb42d7d9fc500a6ef87f"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_2.npz",
+          "bytes": 756,
+          "sha256": "b9e96a699ccf3a4c31ffbd03e52b25570889833425d20fa44e06c37b327cf61e"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_3.npz",
+          "bytes": 759,
+          "sha256": "1a7deeb1285009789d5e6045d7e39f7d019c9223d9a75a2b7ce5e26d33b51f63"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_4.npz",
+          "bytes": 702,
+          "sha256": "b5419ff3fe31adcae66fdb085d4f47d0b188e9436ab59f438632af969aafc674"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_5.npz",
+          "bytes": 691,
+          "sha256": "68405fd1b9ff6105d99717220ecbd198785e338bf4a73abee722bbc9703d2667"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_6.npz",
+          "bytes": 756,
+          "sha256": "8ad78b973164e70e5ac0d282e79adcbc6006e373909fbdfd72a13131e09040b8"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_7.npz",
+          "bytes": 693,
+          "sha256": "a84bcbf997365bddf5fdf72ed49dc7e435e475f8c6210f8cdee7c8581a2bd6df"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_8.npz",
+          "bytes": 762,
+          "sha256": "65ba65f296f91d40d2d7d3c9369b67415094a7e254c6eee48cd6d6531c586fdf"
+        },
+        {
+          "dataset": "texas",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/texas_split_0.6_0.2_9.npz",
+          "bytes": 693,
+          "sha256": "4306981d654ad8835c000c1f73fb6c1e60dfe99e26c13a6073f3b0f4cc3ce6ee"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "2c3f64ba87e8680b1857d408430b1f5bcfe1d0e93312c1d85f139b6d2b6b0831"
+        },
+        {
+          "split_id": 1,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "e4ab395b45b739bb65f731364d7d2313779b8fd018aaa8dfe39040886eba6007"
+        },
+        {
+          "split_id": 2,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "34a15f7f878e2764424d78db24d7a45e3082772cfda3f3e0808b394f50869feb"
+        },
+        {
+          "split_id": 3,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "4c7443aa07c1c0881c8b1b35ae91b143fa7f0da4ff3557a3dbdd87dff4e9d950"
+        },
+        {
+          "split_id": 4,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "c770c42f70cdded54428a26a96617b00a2ea148a20507d4fee0b464085c96385"
+        },
+        {
+          "split_id": 5,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "ebedb4475d59475b2574565ac5c00d1d248f21f1cc2f0c15fc21f76137765ee3"
+        },
+        {
+          "split_id": 6,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "b101d98f4a4a7cd667942b5e80423e353d192605b9c2665575d98cdd59d08848"
+        },
+        {
+          "split_id": 7,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "e4d3caf799628e21b8e48bfbb8879449f48fbc8ba02912854f0d4414e966f7be"
+        },
+        {
+          "split_id": 8,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "7a8b2ab3e2d2e64684d55a903d0da1222ec20504949100170985a8ca04771617"
+        },
+        {
+          "split_id": 9,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "24227c57548e9f125359d86f8cdda1445cf9d4623a3f50a01bbc29c43da66d66"
+        }
+      ],
+      "labels_sha256": "ad6aab2bba7360ed4179ee9b9b60f850f8dcdbfe0c52b960b9ab0e3a61a9758f",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "cornell": {
+      "num_nodes": 183,
+      "num_splits": 10,
+      "file": "cornell.npz",
+      "file_sha256": "7a812e392c3600b6a21d4f846aff14b40da51a8e125f6a517d18e7bcfd38c711",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "cornell",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_0.npz",
+          "bytes": 704,
+          "sha256": "14022a1e19ec7fc0a07a2c06a785a2f9dc52809dbcd1c14fc318f7800675d73f"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_1.npz",
+          "bytes": 700,
+          "sha256": "5568fa27e968a724c92211bf97026a36a08893cf94b218043e49b4c973c35cfb"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_2.npz",
+          "bytes": 695,
+          "sha256": "763fc1f423395e4172617fa5b6bc0d7adad2241e5fedd1a4f0a098a67f9dc8e9"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_3.npz",
+          "bytes": 701,
+          "sha256": "4334321cd9ec42de9d51107fb9a6dc310512e0921bc1cff0f390301ee37315fa"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_4.npz",
+          "bytes": 759,
+          "sha256": "2b6b3ef396f4dc7fcdc276fb16b88bb87409b25879dd672b3a506eca844dd8d7"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_5.npz",
+          "bytes": 754,
+          "sha256": "1a40ef8b20aa9e1aa850e1abdaba3efac1f66c98ef2c6a59eadefa21136ece6b"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_6.npz",
+          "bytes": 758,
+          "sha256": "bcddf4ab59eae4c7d47b8a6cec9025a54ec0e6d3f3bdcd7678e201f25ace4642"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_7.npz",
+          "bytes": 693,
+          "sha256": "2b497e12dfc123d7e7c9bb4fc4a82b5bee18409e109a3e3a04da439cacec964d"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_8.npz",
+          "bytes": 701,
+          "sha256": "5c4e110d252d7ad156b2e4cd34b6dbd1cecbcc1755f8d72e932cc2a54f2b643c"
+        },
+        {
+          "dataset": "cornell",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/cornell_split_0.6_0.2_9.npz",
+          "bytes": 704,
+          "sha256": "80f1531807194d301affbf6f879a4ab4f56a19bdccb62d192e3ecd1b5275f052"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "cf1681d8cd7d80fafb1ad3bd90935c1e8b813a5ba26e0ed81f0de11aeeee398b"
+        },
+        {
+          "split_id": 1,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "8cde347a90156d6abde2967ba2a40ff3a22740f02088e3e940c4901a8f868ce9"
+        },
+        {
+          "split_id": 2,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "9ebcf0c2f4839327cc8f0b7713fe69ad478f023a8770b2745731269d187e87ac"
+        },
+        {
+          "split_id": 3,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "81e405a1ef04f4f6fd045e402d4c4f7337b50a90dda641f9271d66dcd446cb17"
+        },
+        {
+          "split_id": 4,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "ac6604e100e00d3a6a839652e83bc4dd9921b2770684b4848494841522d63506"
+        },
+        {
+          "split_id": 5,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "99a8f61cec5c5c0526bc651d0e49d1de611507aac5260cbb15ca4fd5d250dc64"
+        },
+        {
+          "split_id": 6,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "7ad2d1e0a950b7185d8d970126fbe74d3cacc2d7c915a7f61a8a860c33cbf6f1"
+        },
+        {
+          "split_id": 7,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "d9a52991e351a93f5ebff024bad7d7a7086f337c5488fd0cc1765717ef86eea2"
+        },
+        {
+          "split_id": 8,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "a4bda173be1ad4f7f4cab57eeff77aa09c93688728750e89bbc515249fe83b98"
+        },
+        {
+          "split_id": 9,
+          "train": 87,
+          "valid": 59,
+          "test": 37,
+          "assigned": 183,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "ratios_of_graph": [
+            0.47540983606557374,
+            0.3224043715846995,
+            0.20218579234972678
+          ],
+          "fingerprint": "2ea9f4e92e3e2e4ce271b432cf6ccc671459e280e5a349f025a73a8ee0caaa72"
+        }
+      ],
+      "labels_sha256": "281192c3707bba546f3b4f8c1660c42d6891f44bc128db92e6b2ca5a7806ad91",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "wisconsin": {
+      "num_nodes": 251,
+      "num_splits": 10,
+      "file": "wisconsin.npz",
+      "file_sha256": "300570cea163de21f6837c3a1ae872dcdd8b510f546fba70390b8d843041a5c5",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "wisconsin",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_0.npz",
+          "bytes": 805,
+          "sha256": "f66f641e191d35d491cd3b63d6c2cd93c4b436da398984b44c19a8d4d7e7b1a5"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_1.npz",
+          "bytes": 739,
+          "sha256": "534aeb97266bd5a85a8587adf8eebad3f2e001c1240610f24b62c0ad0c2466ee"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_2.npz",
+          "bytes": 747,
+          "sha256": "047a5b641778ec3a4c76055fd7f18ecb2424c0952f20dfff7e1b17749d8acbdd"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_3.npz",
+          "bytes": 810,
+          "sha256": "706c27b4c51d046c0316f1e915f093e4a1fff48b3436b3e7c421eab596a99e77"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_4.npz",
+          "bytes": 812,
+          "sha256": "7ee813605eec086457aaff022cf3837f2f893fcf8bd37e3a8d2ff0c80e4c4f87"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_5.npz",
+          "bytes": 749,
+          "sha256": "8094ac2bdaf2cbea8f7a48df66a0800c809b2fd5942740e6b0441b660d3a0dd5"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_6.npz",
+          "bytes": 735,
+          "sha256": "c423a8deea9b18f9ecb6cfd703578e2159df167de01fe7e6195b88995010252d"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_7.npz",
+          "bytes": 733,
+          "sha256": "57ad808c8d4dd94dc4404124370bbcebb3dcc597c2bea6457bf05f220adf1527"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_8.npz",
+          "bytes": 741,
+          "sha256": "27d4d62a2a6aea2cdc399302237512ab0d64fb0c84e648112f97c5896274e42f"
+        },
+        {
+          "dataset": "wisconsin",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/wisconsin_split_0.6_0.2_9.npz",
+          "bytes": 744,
+          "sha256": "3c149cd124a19021031609e0d7743a7be59aae4f88c8d38410138e8f06f5daaf"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "f5c0572e1711935d68ca77a18fcca22da3d881899d7635022f6e6f78ee82e216"
+        },
+        {
+          "split_id": 1,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "bc04efecc18e005410c6191edb6905f627f9a057243ace4cae6b4dc12ed56a0e"
+        },
+        {
+          "split_id": 2,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "c573c3189199ccc19c624917bd70fa37cbc2b785a12834366745ec2298919764"
+        },
+        {
+          "split_id": 3,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "79a77aa09be0e34fbc93ab7d3d6d790fefbfe6f311623ce3521364b16780300e"
+        },
+        {
+          "split_id": 4,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "a53bbb39c634d7ba8d82ae1da43074f2ddffe7bae3181ec67ac69f48556caf55"
+        },
+        {
+          "split_id": 5,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "bd530cf735159fa04b66d3466875625a0edd9945c7d0a78ab1aa0beabc5339a8"
+        },
+        {
+          "split_id": 6,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "8dfd1f7c98382c4b4218c172b5ed7c4ef84ab667c45de76c4e5b1016ba5590da"
+        },
+        {
+          "split_id": 7,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "3283cd3201ee16d36769209ffec08c8bf0be30fa961edb13fe0c5177ab9780b6"
+        },
+        {
+          "split_id": 8,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "3d0672ccef1ad5346138ec30cbba82936a336298da3d587abb6d4d11e8d0e743"
+        },
+        {
+          "split_id": 9,
+          "train": 120,
+          "valid": 80,
+          "test": 51,
+          "assigned": 251,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "ratios_of_graph": [
+            0.47808764940239046,
+            0.3187250996015936,
+            0.20318725099601595
+          ],
+          "fingerprint": "e82010d46ce15113ddbb5646c7153661aa8f1774d091d89c18bafc9f2a27cc41"
+        }
+      ],
+      "labels_sha256": "cdceb7d77554f5a6df2cdd13067944055d50069cb671af86f5ec7837962edab0",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "actor": {
+      "num_nodes": 7600,
+      "num_splits": 10,
+      "file": "actor.npz",
+      "file_sha256": "3a05af945e83a508b8cee38fd2ec53f53e5a4dd8f3cf7a139dcb78697025a948",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "film",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_0.npz",
+          "bytes": 4214,
+          "sha256": "4505a41d4e90abd94d1ec22571ce528b09ad7cf20d87f764aebd4177590767f5"
+        },
+        {
+          "dataset": "film",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_1.npz",
+          "bytes": 4231,
+          "sha256": "1871b0d24e3977c41e378fd24acc8025b63f86b77739be77a5b558d1287f207d"
+        },
+        {
+          "dataset": "film",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_2.npz",
+          "bytes": 4224,
+          "sha256": "d26680e911ef3ecc9fc2a26d90c9d35028c63aadd7a5aea774649d1496c282cb"
+        },
+        {
+          "dataset": "film",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_3.npz",
+          "bytes": 4207,
+          "sha256": "6755ad5f6a0be8594b344af3d2261eed935b83b73c4d70136e1a7beea7f78cb0"
+        },
+        {
+          "dataset": "film",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_4.npz",
+          "bytes": 4233,
+          "sha256": "328fdca62b25074f21f2922518e042f24b3b8a1fc378f9dfb2cae36439aed902"
+        },
+        {
+          "dataset": "film",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_5.npz",
+          "bytes": 4224,
+          "sha256": "5b3161a8dc8de4b2e651ebd56d68e768d1377044895b325566117fe26ab81cb7"
+        },
+        {
+          "dataset": "film",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_6.npz",
+          "bytes": 4221,
+          "sha256": "e251b38abd4d7931b5e9ae5aba99dcdf87f0be283bdf6e65421274a1c9ef1df6"
+        },
+        {
+          "dataset": "film",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_7.npz",
+          "bytes": 4205,
+          "sha256": "12164ef9f5620a2f12a387f4f2b8636859d42201101d6d32829ade62d5a98326"
+        },
+        {
+          "dataset": "film",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_8.npz",
+          "bytes": 4217,
+          "sha256": "405cd1f7f631f678119f8bf2405809e86614d532985beb59566fcf95abd35b3f"
+        },
+        {
+          "dataset": "film",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/master/splits/film_split_0.6_0.2_9.npz",
+          "bytes": 4208,
+          "sha256": "505691c5d41bb37b20d085415dcdde2e8e68b5bc4e1feb2c0e361308002012bb"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "b4a22bb6e6fc960889aa7ebf6b07f55561218ba337734ae762c2bca55018ed17"
+        },
+        {
+          "split_id": 1,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "b90abece61e23c7dbcbcc5555cf193e52abccb7644ab30179ac4e3f42a31b2b1"
+        },
+        {
+          "split_id": 2,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "e7146e954c77c1763d340eb7f335e3f5b00a7844aefc35ee70512e4bdc43e2d0"
+        },
+        {
+          "split_id": 3,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "798047f90fa7f8914de9c5d558419ecbc26b56618d8f1c3f7f71dad8541adf4d"
+        },
+        {
+          "split_id": 4,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "4e4c60c7fe8bddc927c599a7c220764d11ea9a3eccbebb2b17495b056e10d8da"
+        },
+        {
+          "split_id": 5,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "038bed0aa1a50722fd1a9dc5532df105326426bfc66300b3a6e1c2a2681e70ec"
+        },
+        {
+          "split_id": 6,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "3249742f59e0dfa8d2d68195bc7a3f01b233612f851549bdf6e78707c8004d95"
+        },
+        {
+          "split_id": 7,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "c0dbf5f5b3bad86d2174b227bad909282c8c09a31ab53e27e74c62f09308a34e"
+        },
+        {
+          "split_id": 8,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "0c99e5d683d641f6a9b6a83ac89e1912b33ccd7c634d586c015e231580ad6a74"
+        },
+        {
+          "split_id": 9,
+          "train": 3648,
+          "valid": 2432,
+          "test": 1520,
+          "assigned": 7600,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "bc96d5b96ec2c5a04e5c3fd73470506185dbbfe52c2292d230d69a6c6d95d34e"
+        }
+      ],
+      "labels_sha256": "697482f1b5f45e095c1723513016cecea43c757d2f5f779c3042a95aada7894b",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "squirrel-f": {
+      "num_nodes": 2223,
+      "num_splits": 10,
+      "file": "squirrel-f.npz",
+      "file_sha256": "060a308819a10867406bcf4c456ca872a970e689beb62cc1b4e519ab6fd87b87",
+      "reference": "Platonov et al., ICLR 2023: filtered inherited masks",
+      "sources": [
+        {
+          "dataset": "squirrel_filtered",
+          "split_id": null,
+          "repository": "yandex-research/heterophilous-graphs",
+          "revision": "main",
+          "url": "https://raw.githubusercontent.com/yandex-research/heterophilous-graphs/main/data/squirrel_filtered.npz",
+          "bytes": 208215,
+          "sha256": "f06370ffb3116c5de8b7a600005400b2293c025e0ce2f6916d8201a825505ac7"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 1053,
+          "valid": 718,
+          "test": 452,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47368421052631576,
+            0.32298695456590193,
+            0.20332883490778228
+          ],
+          "ratios_of_graph": [
+            0.47368421052631576,
+            0.32298695456590193,
+            0.20332883490778228
+          ],
+          "fingerprint": "d651501586e78420870e35fea05e2faedf4655b4170e044a74a8ba4cdb268a97"
+        },
+        {
+          "split_id": 1,
+          "train": 1080,
+          "valid": 700,
+          "test": 443,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48582995951417,
+            0.3148897885739991,
+            0.19928025191183085
+          ],
+          "ratios_of_graph": [
+            0.48582995951417,
+            0.3148897885739991,
+            0.19928025191183085
+          ],
+          "fingerprint": "f224ac2711757457cfdb8edfda693a6ba20c09a4227b5f04a2fc4c82ee2bdfb3"
+        },
+        {
+          "split_id": 2,
+          "train": 1047,
+          "valid": 726,
+          "test": 450,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4709851551956815,
+            0.3265856950067476,
+            0.20242914979757085
+          ],
+          "ratios_of_graph": [
+            0.4709851551956815,
+            0.3265856950067476,
+            0.20242914979757085
+          ],
+          "fingerprint": "2e3133f193d23e8549a63512cc56f7db656a0ec335fea5d4c225e446b10a666a"
+        },
+        {
+          "split_id": 3,
+          "train": 1060,
+          "valid": 713,
+          "test": 450,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4768331084120558,
+            0.32073774179037334,
+            0.20242914979757085
+          ],
+          "ratios_of_graph": [
+            0.4768331084120558,
+            0.32073774179037334,
+            0.20242914979757085
+          ],
+          "fingerprint": "5553eebf5885f1efe7e4b3b8d8dbf458e1b85a10127530d2308d1815c61e438f"
+        },
+        {
+          "split_id": 4,
+          "train": 1055,
+          "valid": 719,
+          "test": 449,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4745838956365272,
+            0.32343679712100765,
+            0.20197930724246513
+          ],
+          "ratios_of_graph": [
+            0.4745838956365272,
+            0.32343679712100765,
+            0.20197930724246513
+          ],
+          "fingerprint": "9336b097440e29cf55c4a2cf6fe92ffb5c8e251a984847070e1ee666ab21f4a1"
+        },
+        {
+          "split_id": 5,
+          "train": 1077,
+          "valid": 691,
+          "test": 455,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4844804318488529,
+            0.3108412055780477,
+            0.2046783625730994
+          ],
+          "ratios_of_graph": [
+            0.4844804318488529,
+            0.3108412055780477,
+            0.2046783625730994
+          ],
+          "fingerprint": "348e1a34988e7c85f09ec3fd46160e83447c943811976d24056e1945b02729d8"
+        },
+        {
+          "split_id": 6,
+          "train": 1085,
+          "valid": 692,
+          "test": 446,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4880791722896986,
+            0.3112910481331534,
+            0.200629779577148
+          ],
+          "ratios_of_graph": [
+            0.4880791722896986,
+            0.3112910481331534,
+            0.200629779577148
+          ],
+          "fingerprint": "0dae12d30bf0472a574ffe6ffd98390c9a822d7bc5a434786b09d62f14d5f125"
+        },
+        {
+          "split_id": 7,
+          "train": 1051,
+          "valid": 739,
+          "test": 433,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4727845254161044,
+            0.3324336482231219,
+            0.19478182636077374
+          ],
+          "ratios_of_graph": [
+            0.4727845254161044,
+            0.3324336482231219,
+            0.19478182636077374
+          ],
+          "fingerprint": "a99651780b6f3d133cd0af6906b2d712dbc7471dea81eaafc56e88460fa028ef"
+        },
+        {
+          "split_id": 8,
+          "train": 1049,
+          "valid": 691,
+          "test": 483,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47188484030589295,
+            0.3108412055780477,
+            0.21727395411605938
+          ],
+          "ratios_of_graph": [
+            0.47188484030589295,
+            0.3108412055780477,
+            0.21727395411605938
+          ],
+          "fingerprint": "df478587fc9222ace720d9b87532bcb06b7beb52e269da398250de3cbd797cdc"
+        },
+        {
+          "split_id": 9,
+          "train": 1074,
+          "valid": 733,
+          "test": 416,
+          "assigned": 2223,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48313090418353577,
+            0.32973459289248763,
+            0.1871345029239766
+          ],
+          "ratios_of_graph": [
+            0.48313090418353577,
+            0.32973459289248763,
+            0.1871345029239766
+          ],
+          "fingerprint": "b7d9f12153976b9f2b80d2836e14621f14ffa2b93bfaed5d51ff57b8fae351b3"
+        }
+      ],
+      "labels_sha256": "6151203227960b5328b0f942592a6e9ec69f2935a7bb5f271aec4addba2e508a",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "chameleon-f": {
+      "num_nodes": 890,
+      "num_splits": 10,
+      "file": "chameleon-f.npz",
+      "file_sha256": "ac1e46cc06285cc852837ebc9a91dc5a74589624a590248991a995192c803337",
+      "reference": "Platonov et al., ICLR 2023: filtered inherited masks",
+      "sources": [
+        {
+          "dataset": "chameleon_filtered",
+          "split_id": null,
+          "repository": "yandex-research/heterophilous-graphs",
+          "revision": "main",
+          "url": "https://raw.githubusercontent.com/yandex-research/heterophilous-graphs/main/data/chameleon_filtered.npz",
+          "bytes": 58924,
+          "sha256": "bf46f07e1fb5249280447e5fe3100f3e82fc4b93ad1e13ffcfdec924b6ac0bb5"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 409,
+          "valid": 287,
+          "test": 194,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.45955056179775283,
+            0.32247191011235954,
+            0.21797752808988763
+          ],
+          "ratios_of_graph": [
+            0.45955056179775283,
+            0.32247191011235954,
+            0.21797752808988763
+          ],
+          "fingerprint": "113cad4e72ce7473551c81b57db37bcc79efb19fb80d56dc4bc6842232a01c9b"
+        },
+        {
+          "split_id": 1,
+          "train": 427,
+          "valid": 302,
+          "test": 161,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4797752808988764,
+            0.3393258426966292,
+            0.18089887640449437
+          ],
+          "ratios_of_graph": [
+            0.4797752808988764,
+            0.3393258426966292,
+            0.18089887640449437
+          ],
+          "fingerprint": "7d3bc9fe62981eac4edef0c08bb8d93d22643ebb54b10e5d85f79f9bec532c32"
+        },
+        {
+          "split_id": 2,
+          "train": 422,
+          "valid": 290,
+          "test": 178,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.47415730337078654,
+            0.3258426966292135,
+            0.2
+          ],
+          "ratios_of_graph": [
+            0.47415730337078654,
+            0.3258426966292135,
+            0.2
+          ],
+          "fingerprint": "3f1a723899484328025f878567303b8d5233d71d7496e5f6a1483a422a41b556"
+        },
+        {
+          "split_id": 3,
+          "train": 412,
+          "valid": 294,
+          "test": 184,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.46292134831460674,
+            0.3303370786516854,
+            0.20674157303370785
+          ],
+          "ratios_of_graph": [
+            0.46292134831460674,
+            0.3303370786516854,
+            0.20674157303370785
+          ],
+          "fingerprint": "40642047147cc403e8320b4ceb666f88fc371468779e5a1ea9c6b75808d7aa98"
+        },
+        {
+          "split_id": 4,
+          "train": 440,
+          "valid": 268,
+          "test": 182,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4943820224719101,
+            0.30112359550561796,
+            0.20449438202247192
+          ],
+          "ratios_of_graph": [
+            0.4943820224719101,
+            0.30112359550561796,
+            0.20449438202247192
+          ],
+          "fingerprint": "d75a41c17a29659f79f25c2fc84f9f0f75c092708ec0365760d2efe3ec7eec22"
+        },
+        {
+          "split_id": 5,
+          "train": 434,
+          "valid": 292,
+          "test": 164,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.48764044943820223,
+            0.32808988764044944,
+            0.1842696629213483
+          ],
+          "ratios_of_graph": [
+            0.48764044943820223,
+            0.32808988764044944,
+            0.1842696629213483
+          ],
+          "fingerprint": "524f1cdf7d632a60b3fca55a06eb4d7fa279467d86a927948518474be89e9bef"
+        },
+        {
+          "split_id": 6,
+          "train": 418,
+          "valid": 284,
+          "test": 188,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4696629213483146,
+            0.31910112359550563,
+            0.21123595505617979
+          ],
+          "ratios_of_graph": [
+            0.4696629213483146,
+            0.31910112359550563,
+            0.21123595505617979
+          ],
+          "fingerprint": "ff53ab194ad09e2bb2dc5991dfc41fade4645fc026a72685b6c3f60cc107ecb1"
+        },
+        {
+          "split_id": 7,
+          "train": 421,
+          "valid": 310,
+          "test": 159,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4730337078651685,
+            0.34831460674157305,
+            0.17865168539325843
+          ],
+          "ratios_of_graph": [
+            0.4730337078651685,
+            0.34831460674157305,
+            0.17865168539325843
+          ],
+          "fingerprint": "137699482b996146b2216784de3930d638414d8765810c3b06cb6a2a3626b3da"
+        },
+        {
+          "split_id": 8,
+          "train": 431,
+          "valid": 287,
+          "test": 172,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4842696629213483,
+            0.32247191011235954,
+            0.19325842696629214
+          ],
+          "ratios_of_graph": [
+            0.4842696629213483,
+            0.32247191011235954,
+            0.19325842696629214
+          ],
+          "fingerprint": "6f8ba288b525f2088379d8f1d5804c048ce17e47d2b5bfdde2c4678668b65339"
+        },
+        {
+          "split_id": 9,
+          "train": 426,
+          "valid": 278,
+          "test": 186,
+          "assigned": 890,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4786516853932584,
+            0.31235955056179776,
+            0.20898876404494382
+          ],
+          "ratios_of_graph": [
+            0.4786516853932584,
+            0.31235955056179776,
+            0.20898876404494382
+          ],
+          "fingerprint": "432debfca5b7c15b5661bdec729cd0c74b7b92a76cdac91bc8e7841c9fda05f7"
+        }
+      ],
+      "labels_sha256": "b920cbeb45269709aaa0fdc22b8ffa7e738801945cccf4b09460f5e59e7954ff",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "roman-empire": {
+      "num_nodes": 22662,
+      "num_splits": 10,
+      "file": "roman-empire.npz",
+      "file_sha256": "67d051c630a843551dbf159f27374eb6f665e4406723255285f3e4898a96e0cb",
+      "reference": "Platonov et al., ICLR 2023: original benchmark masks",
+      "sources": [
+        {
+          "dataset": "roman_empire",
+          "split_id": null,
+          "repository": "yandex-research/heterophilous-graphs",
+          "revision": "main",
+          "url": "https://raw.githubusercontent.com/yandex-research/heterophilous-graphs/main/data/roman_empire.npz",
+          "bytes": 20401489,
+          "sha256": "a58ba741d123bf892fe5c872138d07463d75a2e9012360b8dd78ac2d4766d428"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "15bdfc3eaa8ae0d967c7e8f7f1b4ec3b1e1a5869957a86fdb6254f308fe343f7"
+        },
+        {
+          "split_id": 1,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "96792694b186605403986670e7338a159950c8b910887aab459962ab1dac526b"
+        },
+        {
+          "split_id": 2,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "eab1367b69a959e9ed9c2cca319d361cf101b0e21067361cc7a639d103d107a2"
+        },
+        {
+          "split_id": 3,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "4b5355674cb117e96305d03bac5179604e14d3d250452dd8adef54a45e15fd11"
+        },
+        {
+          "split_id": 4,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "2f9d8687f4a9441a321189d62cde73e41d2bb2cba948e2ddc4d2c39ff3726e04"
+        },
+        {
+          "split_id": 5,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "f84e3626dbdf9a18597c0684c2fcb643af8ea042140412b818347ed396524a9e"
+        },
+        {
+          "split_id": 6,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "8d8fba8847e37453d0eda50d1c8a6016b55a24ea920780db0f78bcaa68c092ea"
+        },
+        {
+          "split_id": 7,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "d624b794c637ef972ba37f24c0edea71838b62f95fdd0ae30c5c075385bc0b4c"
+        },
+        {
+          "split_id": 8,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "00608ea79a122864ad231d44edbecde09b90cc636606d9361525ac057013dbbe"
+        },
+        {
+          "split_id": 9,
+          "train": 11331,
+          "valid": 5665,
+          "test": 5666,
+          "assigned": 22662,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24997793663401288,
+            0.2500220633659871
+          ],
+          "fingerprint": "a41d4e6d3604a068b0c0a7a4681a6f667ef8ca9d9b2bff5a0d3566795ff7b311"
+        }
+      ],
+      "labels_sha256": "9be3c1257b4cfebeca26f57787166dfd3d76b5db7b0fc6376d82e14a8aa23e13",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "amazon-ratings": {
+      "num_nodes": 24492,
+      "num_splits": 10,
+      "file": "amazon-ratings.npz",
+      "file_sha256": "cacebe532e66bd0a94ddb72272f1780c72730f9b2dd257bc76d66e54426ba643",
+      "reference": "Platonov et al., ICLR 2023: original benchmark masks",
+      "sources": [
+        {
+          "dataset": "amazon_ratings",
+          "split_id": null,
+          "repository": "yandex-research/heterophilous-graphs",
+          "revision": "main",
+          "url": "https://raw.githubusercontent.com/yandex-research/heterophilous-graphs/main/data/amazon_ratings.npz",
+          "bytes": 27744018,
+          "sha256": "4c3a3e3b9d9f6cba0fede4625a00aad8c5721c1a36ed771367f446763241c7dd"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "10193081f166b4fe213ae18ef16e7a7bfcaa9b2b61154919cd954310a0a03019"
+        },
+        {
+          "split_id": 1,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "e178fc1bdb07ef8b97504fe123c74d68b8be3cb7f28a48d3b12f563b5c5709fb"
+        },
+        {
+          "split_id": 2,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "a523efb2c6501c43a46b4640b46e104f2031a0b21a03547ebc2635ea30ec18ab"
+        },
+        {
+          "split_id": 3,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "4e6bacea7a61d560803670a66758d52f6a7d3d6358d672968d8fd0d27424688f"
+        },
+        {
+          "split_id": 4,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "9013c67f18741c90c690d7076af1f32d8e44ae2efaac59f5f333ab8a65623c37"
+        },
+        {
+          "split_id": 5,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "2b0659d13d0a3c191b231bca09d205cdef54efb6446a37ce621d819df86d16f4"
+        },
+        {
+          "split_id": 6,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "c490289def73c7f4ee0ff8fa4e81b3ecfb6b13a18ce4650d859f4ab201657d8d"
+        },
+        {
+          "split_id": 7,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "1c9912e73193540c7844672ea7ea6dfaf6881aeb3b0e38dd2b228cf5464e76ea"
+        },
+        {
+          "split_id": 8,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "95b6b54ca917a82c6ce973fec1186ead1f0868fec072d3b05b5af63a4c3b9e0b"
+        },
+        {
+          "split_id": 9,
+          "train": 12246,
+          "valid": 6123,
+          "test": 6123,
+          "assigned": 24492,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "02a96dddaf15fd1ef9d859505882cfb8174484fd318b27268244f826d77b649f"
+        }
+      ],
+      "labels_sha256": "e509d03ad344580a1539730a6d31d77b9d09c83ab12f5f995dd1abd50e909883",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "minesweeper": {
+      "num_nodes": 10000,
+      "num_splits": 10,
+      "file": "minesweeper.npz",
+      "file_sha256": "cb3359df7a6cc3711bac7891a1119f5ef7afbd8ced1a03a18a578149e95859f4",
+      "reference": "Platonov et al., ICLR 2023: original benchmark masks",
+      "sources": [
+        {
+          "dataset": "minesweeper",
+          "split_id": null,
+          "repository": "yandex-research/heterophilous-graphs",
+          "revision": "main",
+          "url": "https://raw.githubusercontent.com/yandex-research/heterophilous-graphs/main/data/minesweeper.npz",
+          "bytes": 135045,
+          "sha256": "e664c8dacf1e8ac466c2c09ed4b237bd2c5541f47a6eae9c6092cb87f16412b3"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "51ee1f508618d7cdec8a389b4ca3edbd31133235ae828d3aeaf6cfca8fbd69b6"
+        },
+        {
+          "split_id": 1,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "2c219bec5c06dea04f1375844990f8fdaff78f8a57e8647efaee00418e0a1d0c"
+        },
+        {
+          "split_id": 2,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "92b46acc67458a5dab12cd38f576036f55ac8ddc6467ee0a259790f901dc9a2e"
+        },
+        {
+          "split_id": 3,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "862b2e285391696f725c8cf63921ee1d804a70651693bfdc001cc406fcaf2f73"
+        },
+        {
+          "split_id": 4,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "3f3503ba12e190aeb496637c64f5228c8d85a74bcbbf224d627f7c3e395f29c1"
+        },
+        {
+          "split_id": 5,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "bbf1a548219c724fb0fc6a31e1d76708aa0272d331dd6a2f0854416ed8dab274"
+        },
+        {
+          "split_id": 6,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "09bd3a07a8f95f5047381a44041e77235ba7efea672e7ff4b04fb6e21b359a73"
+        },
+        {
+          "split_id": 7,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "1e6bc2562cd1e2ff8acd802a31f04c1b6331d8af099b2aab386d065c431b34c4"
+        },
+        {
+          "split_id": 8,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "7f68dd7ecfe68bfd2e7794702c01ae4cb64655294aeee0b6d954cc37a21aa874"
+        },
+        {
+          "split_id": 9,
+          "train": 5000,
+          "valid": 2500,
+          "test": 2500,
+          "assigned": 10000,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.25,
+            0.25
+          ],
+          "fingerprint": "38390024f9f34bbae8c0fdc1f18129a73a5e73709f73f4e368445715cc016003"
+        }
+      ],
+      "labels_sha256": "b324395d32c926531430b96939ee44d86ca2b856a1f9f99ff9443faf1ec260f3",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "tolokers": {
+      "num_nodes": 11758,
+      "num_splits": 10,
+      "file": "tolokers.npz",
+      "file_sha256": "f8470893aae9eea7afb647a340d33f7148d1d0948fc0ada515ac40efd3d1df4f",
+      "reference": "Platonov et al., ICLR 2023: original benchmark masks",
+      "sources": [
+        {
+          "dataset": "tolokers",
+          "split_id": null,
+          "repository": "yandex-research/heterophilous-graphs",
+          "revision": "main",
+          "url": "https://raw.githubusercontent.com/yandex-research/heterophilous-graphs/main/data/tolokers.npz",
+          "bytes": 1329769,
+          "sha256": "dacf3ac94cec53d03cd2adb5255c08b33dee1656c33ca8164a464bd9450a1667"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "1129f9a4a2de4bdee05ff62a91427f5575c6562ed022169d5f09766234bcf79f"
+        },
+        {
+          "split_id": 1,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "7bf7070c3de8c9b4f5de470f5184dc738e715c4f14fc29957e4ef106c10a110f"
+        },
+        {
+          "split_id": 2,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "d6805809b4eb8c88cff5a369f94e26a934896025db57a8f2213158d43e8bf455"
+        },
+        {
+          "split_id": 3,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "51cb7f75905769ffff6770396173a23c7f91702d87788e7023cf80659cfa7d03"
+        },
+        {
+          "split_id": 4,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "69bb96ebd2206794723222eb36952df397145f9382eedbf82bd08484ade42e3d"
+        },
+        {
+          "split_id": 5,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "1a4b2b32488ccf36e998e49807fa8edd97de525dd9a726f692ecb039ea6fc6ee"
+        },
+        {
+          "split_id": 6,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "c4e21016239302a54e44067a49e7916e76424567faa6e82cab45170ea0e6c69a"
+        },
+        {
+          "split_id": 7,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "15424e83952355402a849e08dfce98a15b5d62bc493cfe07c6eb88ddd265760c"
+        },
+        {
+          "split_id": 8,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "804d011b9d831274ac7c13da06b58f32c96ae0e1cf54800fc69c186ec6096b2b"
+        },
+        {
+          "split_id": 9,
+          "train": 5879,
+          "valid": 2939,
+          "test": 2940,
+          "assigned": 11758,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "ratios_of_graph": [
+            0.5,
+            0.24995747576118388,
+            0.2500425242388161
+          ],
+          "fingerprint": "8b760d2c2dab2695822154ae08d6ead7550169fb247e038d9cdd770a0a7e2d46"
+        }
+      ],
+      "labels_sha256": "808c63a620abae774a7614459d9bfe6a258ee3460f2e39ca0511c59dbf553518",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "questions": {
+      "num_nodes": 48921,
+      "num_splits": 10,
+      "file": "questions.npz",
+      "file_sha256": "d5759289cd674f8b3f9738a567284260dbf02ee8ec756bfacb19e657a2efda58",
+      "reference": "Platonov et al., ICLR 2023: original benchmark masks",
+      "sources": [
+        {
+          "dataset": "questions",
+          "split_id": null,
+          "repository": "yandex-research/heterophilous-graphs",
+          "revision": "main",
+          "url": "https://raw.githubusercontent.com/yandex-research/heterophilous-graphs/main/data/questions.npz",
+          "bytes": 47369919,
+          "sha256": "757ebd772bab1475c4dd951ca9e364400c6db161656cff9d21780ee874cf3074"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "5db3c793f499aaf58e634f6340c0a247bafcd2881b89fe6cb5a073f3e87ebc65"
+        },
+        {
+          "split_id": 1,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "94c96357541512fd3f55fadef60834a0ac0b39e38f703f925a3197fb40209cbb"
+        },
+        {
+          "split_id": 2,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "5ce145c6e99cbe5a2634192902381996e425b13ed7886a1ad18108c6566e2643"
+        },
+        {
+          "split_id": 3,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "483168054ce8911275c30a69d67afc718c7783ca3a725c8c94a262e0634981c9"
+        },
+        {
+          "split_id": 4,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "d484185774b5e6e794f9cc1e3a9dcde5b7c280fe2e2f4e60700b4abb3e237d93"
+        },
+        {
+          "split_id": 5,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "e28fc8e0ed935e2310ca1d3c8177dbce8d990c8bd96afc229ff9d3ca748205b5"
+        },
+        {
+          "split_id": 6,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "e044af0481356130cb2cd106fdbe1792fd6c8678f71bbf6a8a5a2005366575df"
+        },
+        {
+          "split_id": 7,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "14a53147654a9bf27b522b6be531ed721cd1b781d413d35deab06f5f1ace3c68"
+        },
+        {
+          "split_id": 8,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "df50d82f7113237794eb9b2aeb1db4f3c3967a1b5546fb96a0fb6651ad0d82ff"
+        },
+        {
+          "split_id": 9,
+          "train": 24460,
+          "valid": 12230,
+          "test": 12231,
+          "assigned": 48921,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "ratios_of_graph": [
+            0.49998977944032214,
+            0.24999488972016107,
+            0.25001533083951677
+          ],
+          "fingerprint": "998db5b03303af625afa09dcca6cf62bf473a0d02c076f2ed5fe3eab906b63a4"
+        }
+      ],
+      "labels_sha256": "e1ba8d2956ea5e70b047bc2a0ac8442b68ed35de2602ad8b5874f5fa1af1b02b",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "penn94": {
+      "num_nodes": 41554,
+      "num_splits": 5,
+      "file": "penn94.npz",
+      "file_sha256": "9857c1bcf222c3e97ae28088ba531f64b44093e566fb98b43fef79d5d5009462",
+      "reference": "LINKX benchmark, NeurIPS 2021: original fixed partitions",
+      "sources": [
+        {
+          "dataset": "penn94",
+          "split_id": null,
+          "repository": "CUAI/Non-Homophily-Large-Scale",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/CUAI/Non-Homophily-Large-Scale/master/data/splits/fb100-Penn94-splits.npy",
+          "bytes": 581866,
+          "sha256": "88a1060358482d8e25b978ab59c4ff71771388cd5ffac3dd775a3cd9dc85b032"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 19407,
+          "valid": 9703,
+          "test": 9705,
+          "assigned": 38815,
+          "unassigned": 2739,
+          "ratios_of_assigned": [
+            0.4999871183820688,
+            0.2499806775731032,
+            0.250032204044828
+          ],
+          "ratios_of_graph": [
+            0.46703085142224576,
+            0.2335033931751456,
+            0.2335515233190547
+          ],
+          "fingerprint": "8c6330217089d8f2b7a1aba1fd17677e9642fa36199dd0cc05f3dedf3754fb72"
+        },
+        {
+          "split_id": 1,
+          "train": 19407,
+          "valid": 9703,
+          "test": 9705,
+          "assigned": 38815,
+          "unassigned": 2739,
+          "ratios_of_assigned": [
+            0.4999871183820688,
+            0.2499806775731032,
+            0.250032204044828
+          ],
+          "ratios_of_graph": [
+            0.46703085142224576,
+            0.2335033931751456,
+            0.2335515233190547
+          ],
+          "fingerprint": "e0595d53a9332ad481024c2573db30555ba7cb4d66df8ae107f23ed2989909a3"
+        },
+        {
+          "split_id": 2,
+          "train": 19407,
+          "valid": 9703,
+          "test": 9705,
+          "assigned": 38815,
+          "unassigned": 2739,
+          "ratios_of_assigned": [
+            0.4999871183820688,
+            0.2499806775731032,
+            0.250032204044828
+          ],
+          "ratios_of_graph": [
+            0.46703085142224576,
+            0.2335033931751456,
+            0.2335515233190547
+          ],
+          "fingerprint": "f0be0794e80066669ffbda5c8193e4df055a9528d46f3cccb4c0f234048d2070"
+        },
+        {
+          "split_id": 3,
+          "train": 19407,
+          "valid": 9703,
+          "test": 9705,
+          "assigned": 38815,
+          "unassigned": 2739,
+          "ratios_of_assigned": [
+            0.4999871183820688,
+            0.2499806775731032,
+            0.250032204044828
+          ],
+          "ratios_of_graph": [
+            0.46703085142224576,
+            0.2335033931751456,
+            0.2335515233190547
+          ],
+          "fingerprint": "e98b2f763b72e4552fccbf757899755378d3aadf9ec78f24b31b8c82f1f973e1"
+        },
+        {
+          "split_id": 4,
+          "train": 19407,
+          "valid": 9703,
+          "test": 9705,
+          "assigned": 38815,
+          "unassigned": 2739,
+          "ratios_of_assigned": [
+            0.4999871183820688,
+            0.2499806775731032,
+            0.250032204044828
+          ],
+          "ratios_of_graph": [
+            0.46703085142224576,
+            0.2335033931751456,
+            0.2335515233190547
+          ],
+          "fingerprint": "6db42d3cb372983aed5216e16f64873403839eef5c9ded1c4ec93426890a050b"
+        }
+      ],
+      "labels_sha256": null,
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "genius": {
+      "num_nodes": 421961,
+      "num_splits": 5,
+      "file": "genius.npz",
+      "file_sha256": "2f13a699e885ce00a439c34bf4ae7c362e8aa37cb80eb37cc9cd466866227d41",
+      "reference": "LINKX benchmark, NeurIPS 2021: original fixed partitions",
+      "sources": [
+        {
+          "dataset": "genius",
+          "split_id": null,
+          "repository": "CUAI/Non-Homophily-Large-Scale",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/CUAI/Non-Homophily-Large-Scale/master/data/splits/genius-splits.npy",
+          "bytes": 9897026,
+          "sha256": "602cd9412352b80bf16c861535634b6c09ac33404e64450165d35f9bacdfb96d"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 210980,
+          "valid": 105490,
+          "test": 105491,
+          "assigned": 421961,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "ratios_of_graph": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "fingerprint": "a0cc4631a1509e97d35296cfb9e22071707972c4834593fad7f7e61c259ac23a"
+        },
+        {
+          "split_id": 1,
+          "train": 210980,
+          "valid": 105490,
+          "test": 105491,
+          "assigned": 421961,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "ratios_of_graph": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "fingerprint": "088a33d4cecb042a60342a2f46a9fbd75217493c5bbd5a2001c430a54ff5ea96"
+        },
+        {
+          "split_id": 2,
+          "train": 210980,
+          "valid": 105490,
+          "test": 105491,
+          "assigned": 421961,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "ratios_of_graph": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "fingerprint": "51d0007f0d03d974da59bf2f578ba2c3bbf3f55252cca2581fa5d4fa792dea22"
+        },
+        {
+          "split_id": 3,
+          "train": 210980,
+          "valid": 105490,
+          "test": 105491,
+          "assigned": 421961,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "ratios_of_graph": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "fingerprint": "d80169f175e33ecda3eab95ccbdfa2859724cc845119e3c9bfa23c838f1f8aeb"
+        },
+        {
+          "split_id": 4,
+          "train": 210980,
+          "valid": 105490,
+          "test": 105491,
+          "assigned": 421961,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "ratios_of_graph": [
+            0.4999988150563678,
+            0.2499994075281839,
+            0.2500017774154483
+          ],
+          "fingerprint": "7afe45ce6ac73bf6c4b75ee5fdbd04b24e1dd7583891eb0bc7a2ec5ca656d5f0"
+        }
+      ],
+      "labels_sha256": null,
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "arxiv-year": {
+      "num_nodes": 169343,
+      "num_splits": 5,
+      "file": "arxiv-year.npz",
+      "file_sha256": "2f74471a043e7514cbbcab5a54e66b225fe6a1a63f173282484a69347397a706",
+      "reference": "LINKX benchmark, NeurIPS 2021: original fixed partitions",
+      "sources": [
+        {
+          "dataset": "arxiv-year",
+          "split_id": null,
+          "repository": "CUAI/Non-Homophily-Large-Scale",
+          "revision": "master",
+          "url": "https://raw.githubusercontent.com/CUAI/Non-Homophily-Large-Scale/master/data/splits/arxiv-year-splits.npy",
+          "bytes": 3579056,
+          "sha256": "a2d4c8b2ed621270642dcf4886c3f6e425da664b2d31c7a28fb11a6da763077a"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 84671,
+          "valid": 42335,
+          "test": 42337,
+          "assigned": 169343,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "ratios_of_graph": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "fingerprint": "4aa765c04bcc888aa0cb5b32bdd77e7ee25a9300e9f12a93e0dbba627a7eeabc"
+        },
+        {
+          "split_id": 1,
+          "train": 84671,
+          "valid": 42335,
+          "test": 42337,
+          "assigned": 169343,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "ratios_of_graph": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "fingerprint": "bd7cd6337e6052eb1eedf18d5de0733959baf73fbe948d15b390a42940091b41"
+        },
+        {
+          "split_id": 2,
+          "train": 84671,
+          "valid": 42335,
+          "test": 42337,
+          "assigned": 169343,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "ratios_of_graph": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "fingerprint": "f2da4a85f769c6dc43a6df3c88afcd170ca9eac0fc7326579723c6be7930ae29"
+        },
+        {
+          "split_id": 3,
+          "train": 84671,
+          "valid": 42335,
+          "test": 42337,
+          "assigned": 169343,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "ratios_of_graph": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "fingerprint": "cff972478fcb9d22e37e34c782cb05b44e83da1a27e40612ffa4e3b1eb642857"
+        },
+        {
+          "split_id": 4,
+          "train": 84671,
+          "valid": 42335,
+          "test": 42337,
+          "assigned": 169343,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "ratios_of_graph": [
+            0.4999970474126477,
+            0.24999557111897155,
+            0.25000738146838075
+          ],
+          "fingerprint": "5c0514527fb31700787df6214844197fff68141f3843a3d923ac46da4629f0e1"
+        }
+      ],
+      "labels_sha256": null,
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "chameleon": {
+      "num_nodes": 2277,
+      "num_splits": 10,
+      "file": "chameleon.npz",
+      "file_sha256": "c97380be58388fa56a8d9ac9a9b494d2f9d93d6dcb60b1de37133f8989ea3b60",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "chameleon",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_0.npz",
+          "bytes": 1775,
+          "sha256": "36605525b69be4e7df5b31fe6a1d044288c6ebf9f9f0514ca151f6a36afc5e8b"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_1.npz",
+          "bytes": 1779,
+          "sha256": "d0779d5a1bedf1967d394468a52c0175fb00595d361fba897faf73322386c952"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_2.npz",
+          "bytes": 1777,
+          "sha256": "86ad0d827bf4301dff830598fc0b70d0dd8689c5b4d72dab1d87a6c1970c4c6e"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_3.npz",
+          "bytes": 1755,
+          "sha256": "37b3e994adf3afc55e16b617ed05af4e3ce308800755839084d77eced0528e9d"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_4.npz",
+          "bytes": 1778,
+          "sha256": "f6b1d067b2b330132839d8b6120077bdc6cf759f7ce421f881a02e2953ec4596"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_5.npz",
+          "bytes": 1772,
+          "sha256": "e7661834275c826692510cea0457b18b2c1ee38771f178d06e701b97541a1f6d"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_6.npz",
+          "bytes": 1774,
+          "sha256": "16648d1197c1d3a2dec385346212c382030b0d5a8c997f4255aa2afa68a6b174"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_7.npz",
+          "bytes": 1764,
+          "sha256": "61adcc53846becefecd466a5364dda23b983d387d1ac5d58c6e24d080c0fcba7"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_8.npz",
+          "bytes": 1770,
+          "sha256": "7076ad5341a8218b1f5b6eccf9cfd15d28286ea11ef5c06eeee77af24ff2bf63"
+        },
+        {
+          "dataset": "chameleon",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/chameleon_split_0.6_0.2_9.npz",
+          "bytes": 1773,
+          "sha256": "743c4f813bf6130398a6511eb9ff07d2366c73bd6c7fddaf226a3f9e2917e0e7"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "49d7c897326f4e929026b74894daf2204138b32d43067285a09efb135557ac72"
+        },
+        {
+          "split_id": 1,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "a2c9bee625819b8107aea295f7661350fb36463dbacd84f5ee536c48faa89041"
+        },
+        {
+          "split_id": 2,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "d75f95e0da68c3ddb22181d9f2e9785b7c44ed30cae03dd88c7c482cf6b2525a"
+        },
+        {
+          "split_id": 3,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "b56f2a6520784c96cfc21583bf734953fcb2c4eee2f17c6fbdbe00658516749b"
+        },
+        {
+          "split_id": 4,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "4de81e2e1af40e478febb7579918378a18192b9fccfa16625f4ac410fd1a9c98"
+        },
+        {
+          "split_id": 5,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "df4a9edf882f56662a4a9e6eb8932df329e7ab9b76431db062e76708105cc1af"
+        },
+        {
+          "split_id": 6,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "88d4a071a3e2a190700a56d822f60adb040b9e42a989b45fd2cb35946aabfccc"
+        },
+        {
+          "split_id": 7,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "e4904baddbf71db1e32bcbba2ee724ca510fd49979923eac4706e79997ee1234"
+        },
+        {
+          "split_id": 8,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "03017c5ac16775da0497c5cc26f88528af683fcbcd25599221d250613bccba9d"
+        },
+        {
+          "split_id": 9,
+          "train": 1092,
+          "valid": 729,
+          "test": 456,
+          "assigned": 2277,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "ratios_of_graph": [
+            0.4795783926218709,
+            0.3201581027667984,
+            0.2002635046113307
+          ],
+          "fingerprint": "60dd877b14048688ed2b25784fd7fe56fa6e6a5362a75fc067022c176c26b7c3"
+        }
+      ],
+      "labels_sha256": "54b84cc1f70e47083db40d0695d7c1e0955576ed7e69ede03d31c8185dc1a6f0",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    },
+    "squirrel": {
+      "num_nodes": 5201,
+      "num_splits": 10,
+      "file": "squirrel.npz",
+      "file_sha256": "df74f57d992443e8beb27d5ef833e0a7005609611c9dc5d488504ccaa2f9a288",
+      "reference": "Geom-GCN public partitions (not regenerated 60/20/20)",
+      "sources": [
+        {
+          "dataset": "squirrel",
+          "split_id": 0,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_0.npz",
+          "bytes": 3134,
+          "sha256": "f112b88d3354e86d164d4d915b6a1f695c10f0e01e3e6b9893fc7b09bb93191d"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 1,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_1.npz",
+          "bytes": 3130,
+          "sha256": "2486c687c8befb55930a6237f76f1d86ce2ba345782eda6157f4e752d05f304f"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 2,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_2.npz",
+          "bytes": 3121,
+          "sha256": "d62ff83862ad96022d3400dfc9b7ca405834ca62767319d97c36b3f02db978c0"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 3,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_3.npz",
+          "bytes": 3126,
+          "sha256": "af3d90e0b2718ac7417e10e8b5b382443667412e846cabc3cc4e4a592f4cedae"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 4,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_4.npz",
+          "bytes": 3124,
+          "sha256": "fbe848298bb72b88db0704050cf216e2a93c916540d577906f3e644b679a6a2c"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 5,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_5.npz",
+          "bytes": 3111,
+          "sha256": "cd04fab46a181151ddd97ce93c65fe79558fb79ffa230b62f488ebfaf5fdcd75"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 6,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_6.npz",
+          "bytes": 3118,
+          "sha256": "b9189f7903ca7556a025c54dd5be6c00ec5952d4299e71630bc9876157676412"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 7,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_7.npz",
+          "bytes": 3138,
+          "sha256": "ea7fb3ca5d5aa45b917b99fb7d64d4e87322b2b5303a0156c547aa3f1a6c8941"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 8,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_8.npz",
+          "bytes": 3132,
+          "sha256": "b43faa190ca6dd4885a39dfc2a93d59f56f5174f3567bdbc49b18dd9cd9b7fb4"
+        },
+        {
+          "dataset": "squirrel",
+          "split_id": 9,
+          "repository": "graphdml-uiuc-jlu/geom-gcn",
+          "revision": "f1fc0d14b3b019c562737240d06ec83b07d16a8f",
+          "url": "https://raw.githubusercontent.com/graphdml-uiuc-jlu/geom-gcn/f1fc0d14b3b019c562737240d06ec83b07d16a8f/splits/squirrel_split_0.6_0.2_9.npz",
+          "bytes": 3146,
+          "sha256": "529ade4b86fd191908a96011f25c454653083674b6d4f090b3fdd27af2d14f62"
+        }
+      ],
+      "splits": [
+        {
+          "split_id": 0,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "0f39b8437b02ce4af1cc716db70ed05d8f98341018dc1042a72acac4b4d0207e"
+        },
+        {
+          "split_id": 1,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "84c163ff1d04d2c3401c084d899b8322de6d8b4ebca6e5be73576f3437db69ca"
+        },
+        {
+          "split_id": 2,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "70a9ed23253e2b8d7e4411c9b0f2f4cfcb41e584fbb063877078ca700cc291e6"
+        },
+        {
+          "split_id": 3,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "935b79e53af612cf16045cbdc5809197cc669cadca3605caadfcb61237d2a07b"
+        },
+        {
+          "split_id": 4,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "86b462eab3f1150bdf6bda9936b07dda2e0c3cf6bd5444291193f285c287a996"
+        },
+        {
+          "split_id": 5,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "e30bb0834d80ff55dd7a9f2d54d48be96cce2a5d7c323787f7a6b6abd56eeb62"
+        },
+        {
+          "split_id": 6,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "1d6789dee1c15fc83e50c6b8c78e49348ab4423c5f395cd3c3b5780921601b17"
+        },
+        {
+          "split_id": 7,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "0530ce371c5e006500505634244f33826187c9b99d4f4a1f3446617806e59356"
+        },
+        {
+          "split_id": 8,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "45c8cdcd94cf5a0814622edcb5ad5767c8f09ca699e4387c400c2010e5b3d048"
+        },
+        {
+          "split_id": 9,
+          "train": 2496,
+          "valid": 1664,
+          "test": 1041,
+          "assigned": 5201,
+          "unassigned": 0,
+          "ratios_of_assigned": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "ratios_of_graph": [
+            0.4799077100557585,
+            0.3199384733705057,
+            0.20015381657373582
+          ],
+          "fingerprint": "616730c820d01d025ea9c00c768c858cd0c81a830a51bf196f10d93949464607"
+        }
+      ],
+      "labels_sha256": "5304c6c5d07128d72f0142b01b8bb6b02d7055ac30239e0e8d40f403d32bb1ab",
+      "node_order_note": "Preserve original author node IDs; shape checks cannot certify arbitrary reindexing."
+    }
+  },
+  "updated_at": "2026-10-12"
+}

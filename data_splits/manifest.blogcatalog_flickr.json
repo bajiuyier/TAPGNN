@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "datasets": {
+    "blogcatalog": {
+      "file": "blogcatalog.npz",
+      "schema_version": 1,
+      "num_nodes": 5196,
+      "num_splits": 10,
+      "num_features": 8189,
+      "num_classes": 6,
+      "kind": "local_author_masks",
+      "official": true,
+      "ratios": [
+        0.48,
+        0.32,
+        0.2
+      ],
+      "nominal_ratios": [
+        0.48,
+        0.32,
+        0.2
+      ],
+      "reference": "CMGNN author-released 10 random partitions (48/32/20)",
+      "source": "https://github.com/zzn-promax/CMGNN/tree/580dcb42542ba52119187501beeb7b5879cd05b0/data/splits",
+      "source_commit": "580dcb42542ba52119187501beeb7b5879cd05b0",
+      "source_file": "data/splits/blogcatalog_splits.pt",
+      "source_masks_sha256": "58eaf355175a99f9bc50612c2e0dd17da246a9c5e20951b23ae89baf9f58dd74",
+      "dataset_source": "PyG AttributedGraphDataset / Scaling Attributed Network Embedding to Massive Graphs",
+      "dataset_google_id": "178PqGqh67RUYMMP6-SoRHDoIBh8ku5FS",
+      "file_sha256": "9611a5ff66a424cd7a24728a2fab11160f29d5c7fc3ea8fc43de4d67e0501974",
+      "labels_sha256": "39aa04b9434d31a173f1a5e601e612559520d7ffbead3050e4bc7cc21f5032a7",
+      "mask_layout": "num_nodes,num_splits",
+      "splits": [
+        {
+          "split_id": 0,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "9e1f3f9a401ea2ab4f6ccd1cde0e1f719f33973835ebad76796e2c1bcfe2a044"
+        },
+        {
+          "split_id": 1,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "36d5efc41acecb712b809a97666a01b31217a4fcae7b4531708eca0c59c737da"
+        },
+        {
+          "split_id": 2,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "dd8fd3128a5f78745b4d0a4595d26046a58a16936d278ea7e564f220c44ecea5"
+        },
+        {
+          "split_id": 3,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "a4aec1f1e5d9025d608e00851727cbf976c8023fb1e8838f3479e92bd630dc12"
+        },
+        {
+          "split_id": 4,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "0743955a25179f03e142466959781b751a4a3b2ac54d9d71682f1ba846f1babb"
+        },
+        {
+          "split_id": 5,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "8bd530a3d2d94a7a0e04246833ad4ec75e75dd068f07221c7b871947dc24d11e"
+        },
+        {
+          "split_id": 6,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "54623a6e458443f40636bb218680f411ea7ec841c97114e7852cfc8f469b0f7d"
+        },
+        {
+          "split_id": 7,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "f736c757b54044d16975cccad98cbe7ae695e7926a898509da6fb3cea62d1ad9"
+        },
+        {
+          "split_id": 8,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "96ce2b3f123351e0436b915d69718f44549f38366c356253be625eaf707bcb23"
+        },
+        {
+          "split_id": 9,
+          "sizes": [
+            2494,
+            1662,
+            1040
+          ],
+          "ratios": [
+            0.47998460354118555,
+            0.31986143187066973,
+            0.20015396458814472
+          ],
+          "fingerprint": "6a446103b6ad906bd6069508b3f9840b972e6a05aba1728d205e0d7bde2974ab"
+        }
+      ]
+    },
+    "flickr": {
+      "file": "flickr.npz",
+      "schema_version": 1,
+      "num_nodes": 7575,
+      "num_splits": 10,
+      "num_features": 12047,
+      "num_classes": 9,
+      "kind": "local_author_masks",
+      "official": true,
+      "ratios": [
+        0.48,
+        0.32,
+        0.2
+      ],
+      "nominal_ratios": [
+        0.48,
+        0.32,
+        0.2
+      ],
+      "reference": "CMGNN author-released 10 random partitions (48/32/20)",
+      "source": "https://github.com/zzn-promax/CMGNN/tree/580dcb42542ba52119187501beeb7b5879cd05b0/data/splits",
+      "source_commit": "580dcb42542ba52119187501beeb7b5879cd05b0",
+      "source_file": "data/splits/flickr_splits.pt",
+      "source_masks_sha256": "2702bb3a98d892cf8ed41948c3e642380059935a17fab9d4c2464f3a4ab01a6e",
+      "dataset_source": "PyG AttributedGraphDataset / Scaling Attributed Network Embedding to Massive Graphs",
+      "dataset_google_id": "1tZp3EB20fAC27SYWwa-x66_8uGsuU62X",
+      "file_sha256": "eb00d598f59ee1411349ea890b85b112eb5cc505d32fc82b1e57aa3da1676d05",
+      "labels_sha256": "d002987b72f506fca33a14b0ac8d3f7f34cb1a005d0726e03469bdfdd000c86e",
+      "mask_layout": "num_nodes,num_splits",
+      "splits": [
+        {
+          "split_id": 0,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "e4166decd0e526ed93292098e97e2a04e153418296e2cf37c4674527f7641cf9"
+        },
+        {
+          "split_id": 1,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "5e4f2dc79c728d33738c1f981cc55e9cb062ff66e3d7b7c295edb90fb772438c"
+        },
+        {
+          "split_id": 2,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "244a694fb07a2771eb168f0ddf998dec4c5cda4c5a27095bb871003a496bc4a5"
+        },
+        {
+          "split_id": 3,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "6ae601aea105bf55228e56f0509be377fdd424710881eb05cb182cb5cbe482f5"
+        },
+        {
+          "split_id": 4,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "0edbde663d0854f48c658f7988e76da029fc9ee489912c14c309147a4433e0b4"
+        },
+        {
+          "split_id": 5,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "50a0b3d4d41ef576370899c9db00547b6cef918fef06e5ec324d983cff050e2e"
+        },
+        {
+          "split_id": 6,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "5c65a46b08435b1945c32c7ab994eb2ac9271602b1b4082846d359451c1a1bbe"
+        },
+        {
+          "split_id": 7,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "27e0e399d76417777f050c126453e349a1b174645f5d87d5fd6331d0b0c3c874"
+        },
+        {
+          "split_id": 8,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "1fd78e3a17b530bd5fdc11aafcb9f8fda662d013c1d03ae364c3a2ed9d709818"
+        },
+        {
+          "split_id": 9,
+          "sizes": [
+            3636,
+            2424,
+            1515
+          ],
+          "ratios": [
+            0.48,
+            0.32,
+            0.2
+          ],
+          "fingerprint": "a6a966a9ff1e6774ccadbe6643a1d6b30373e8109ae7454dec1cd1a9483efa44"
+        }
+      ]
+    }
+  }
+}
